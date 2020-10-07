@@ -17,13 +17,6 @@ You can easily create, edit or delete the task dynamically using build in [edito
 ## Resource availability
 You can easy manage and track the absence and unavailability of the resources by using the [SpecialTimeRegions](https://help.syncfusion.com/wpf/scheduler/daysview#special-time-regions) support,
 
-{% tabs %}       
-{% highlight c# %}   
-{% endhighlight %}   
-
-{% highlight xaml %}   
-{% endhighlight %}   
-{% endtabs %}   
 
 {% tabs %}       
 {% highlight c# %}   
