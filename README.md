@@ -18,8 +18,7 @@ You can easily create, edit or delete the task dynamically using build in [edito
 You can easy manage and track the absence and unavailability of the resources by using the [SpecialTimeRegions](https://help.syncfusion.com/wpf/scheduler/daysview#special-time-regions) support,
 
 
-{% tabs %}       
-{% highlight c# %}   
+``` c#
 /// <summary>   
 /// Represents custom data properties.   
 /// </summary> 
@@ -30,18 +29,14 @@ public class Employee
     public Brush BackgroundBrush { get; set; }
     public Brush ForegroundBrush { get; set; }
 }
-{% endhighlight %}   
-{% endtabs %}
+```
 
-{% tabs %}       
-{% highlight c# %}   
+``` c# 
 // Custom resource collection in the view model.
 public ObservableCollection<object> Employees { get; set; }
-{% endhighlight %}   
-{% endtabs %}
+```
 
-{% tabs %}       
-{% highlight c# %}  
+``` c# 
 // Adding employee details in custom resource property.
 for (int i = 0; i < 3; i++)
 {
@@ -51,11 +46,9 @@ for (int i = 0; i < 3; i++)
     employee.ID = i.ToString();
     Employees.Add(employee);
 }
-{% endhighlight %}   
-{% endtabs %}
+```
 
-{% tabs %}       
-{% highlight c# %}
+``` c# 
 SpecialTimeRegion timeRegion = new SpecialTimeRegion();
 timeRegion.Text = "Casual leave"
 timeRegion.StartTime = new DateTime(currentDate.Year, currentDate.Month, currentDate.AddDays(2).Day, 0, 0, 0);
@@ -63,11 +56,9 @@ timeRegion.EndTime = new DateTime(currentDate.Year, currentDate.Month, currentDa
 timeRegion.Background = new SolidColorBrush(Color.FromRgb(245, 245, 245));
 timeRegion.ResourceIdCollection = new ObservableCollection<object>() { "1" };
 scheduler.DaysViewSettings.SpecialTimeRegions = new ObservableCollection<SpecialTimeRegion>() { timeRegion };
-{% endhighlight %}   
-{% endtabs %}
+```
 
-{% tabs %}       
-{% highlight xaml %}   
+``` xml   
         <syncfusion:SfScheduler ViewType="WorkWeek"
                                 ResourceGroupType="Resource"
                                 ResourceCollection="{Binding Employees}"
@@ -80,8 +71,7 @@ scheduler.DaysViewSettings.SpecialTimeRegions = new ObservableCollection<Special
                     Foreground="ForegroundBrush"/>
             </syncfusion:SfScheduler.ResourceMapping>
         </syncfusion:SfScheduler>
-{% endhighlight %}   
-{% endtabs %}   
+```
 
 ## Output
 
