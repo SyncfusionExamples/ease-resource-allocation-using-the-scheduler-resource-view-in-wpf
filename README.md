@@ -2,19 +2,19 @@
 
 You can easily manage and allocate the resources in a calendar view by controlling the project tasks, time sheets, and employee’s availability in a manual approach by using scheduler resource view.
 
-## Resource Grouping 
+**Resource Grouping**
 You can allocate the tasks to the employees either by date basis with the available resource or resource basis with the available dates by using the [ResourceGroupType](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Scheduler.SfScheduler.html#Syncfusion_UI_Xaml_Scheduler_SfScheduler_ResourceGroupType) API in [Scheduler](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Scheduler.SfScheduler.html) class. 
 
-## Resource sharing
+**Resource sharing**
 You are free to assign as many resources as you wish to a task by assigning the Id of the resources in [ResourceIdCollection](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Scheduler.ScheduleAppointment.html#Syncfusion_UI_Xaml_Scheduler_ScheduleAppointment_ResourceIdCollection) API of the [ScheduleAppointment](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Scheduler.ScheduleAppointment.html) class.
 
-## Data binding
+**Data binding**
 You can create custom resource model with required field and it can be mapped to the equivalent properties in the [ResourceMapping](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Scheduler.SfScheduler.html#Syncfusion_UI_Xaml_Scheduler_SfScheduler_ResourceMapping) API in scheduler class. 
 
-## Task reassignment
+**Task reassignment**
 You can easily create, edit or delete the task dynamically using build in [editor](https://help.syncfusion.com/wpf/scheduler/appointment-editing) support, [drag and drop](https://help.syncfusion.com/wpf/scheduler/appointment-drag-and-drop) support and appointment [resizing](https://help.syncfusion.com/wpf/scheduler/appointment-editing#appointment-resizing) support in Scheduler control.
 
-## Resource availability
+**Resource availability**
 You can easy manage and track the absence and unavailability of the resources by using the [SpecialTimeRegions](https://help.syncfusion.com/wpf/scheduler/daysview#special-time-regions) support,
 
 
@@ -73,11 +73,13 @@ scheduler.DaysViewSettings.SpecialTimeRegions = new ObservableCollection<Special
         </syncfusion:SfScheduler>
 ```
 
-## Output
+**Output**
 
 ![SchedulerResourceView](https://github.com/SyncfusionExamples/ease-resource-allocation-using-the-scheduler-resource-view-in-wpf/blob/main/ResourceView/ScreenShot/wpf-scheduler-resource-availability.png)
 
-## Customization
+**Customization**
 Scheduler resource view allows you to create different colors or even different views for resource view by using data templates and data-template selector support with [ResourceHeaderTemplate](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Scheduler.SfScheduler.html#Syncfusion_UI_Xaml_Scheduler_SfScheduler_ResourceHeaderTemplate) and [ResourceHeaderTemplateSelector](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Scheduler.SfScheduler.html#Syncfusion_UI_Xaml_Scheduler_SfScheduler_ResourceHeaderTemplateSelector) APIs in scheduler class.
+
+**Output**
 
 ![SchedulerTemplatedResourceView](https://github.com/SyncfusionExamples/ease-resource-allocation-using-the-scheduler-resource-view-in-wpf/blob/main/CustomResourceView/ScreenShot/wpf-scheduler-custom-resource-view.png)
