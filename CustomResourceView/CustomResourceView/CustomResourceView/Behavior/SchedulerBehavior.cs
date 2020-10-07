@@ -27,7 +27,7 @@ namespace CustomResourceView
             casualLeave.Background = new SolidColorBrush(Color.FromRgb(245, 245, 245));
             casualLeave.Foreground = new SolidColorBrush(Colors.Black);
             casualLeave.RecurrenceRule = "FREQ=DAILY;INTERVAL=1;COUNT=1";
-            casualLeave.ResourceIdCollection = new ObservableCollection<object>() { "1" };
+            casualLeave.ResourceIdCollection = new ObservableCollection<object>() { "2" };
 
             var generalPermission = new SpecialTimeRegion();
             generalPermission.Text = "General permission";
@@ -35,7 +35,7 @@ namespace CustomResourceView
             generalPermission.StartTime = new DateTime(currentDate.Year, currentDate.Month, currentDate.AddDays(1).Day, 11, 0, 0);
             generalPermission.EndTime = new DateTime(currentDate.Year, currentDate.Month, currentDate.AddDays(1).Day, 13, 0, 0);
             generalPermission.Background = new SolidColorBrush(Color.FromRgb(245, 245, 245));
-            generalPermission.ResourceIdCollection = new ObservableCollection<object>() { "2" };
+            generalPermission.ResourceIdCollection = new ObservableCollection<object>() { "3" };
             generalPermission.RecurrenceRule = "FREQ=DAILY;INTERVAL=1;COUNT=1";
 
             this.AssociatedObject.DaysViewSettings.SpecialTimeRegions = new ObservableCollection<SpecialTimeRegion>() { casualLeave, generalPermission };
