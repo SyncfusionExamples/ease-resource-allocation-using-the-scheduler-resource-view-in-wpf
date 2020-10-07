@@ -125,12 +125,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\People_Circle0.png" />
     <Resource Include="Assets\People_Circle1.png" />
     <Resource Include="Assets\People_Circle2.png" />
     <Resource Include="Assets\People_Circle3.png" />
-    <Resource Include="Assets\People_Circle4.png" />
-    <Resource Include="Assets\People_Circle5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
