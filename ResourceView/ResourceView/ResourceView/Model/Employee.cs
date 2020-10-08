@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,14 @@ namespace ResourceView
         /// Gets or sets the foreground brush.
         /// </summary>
         public Brush ForegroundBrush { get; set; }
+
+    }
+
+    /// <summary>
+    /// Represents a class that defines the scheduler resource collection.
+    /// </summary>
+    public class SchedulerResourceCollection : ObservableCollection<object>
+    {
 
     }
 }

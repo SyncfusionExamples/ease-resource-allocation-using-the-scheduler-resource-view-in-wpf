@@ -11,35 +11,11 @@ namespace CustomResourceView
 {
     public class SchedulerViewModel : NotificationObject
     {
-        private ObservableCollection<Employee> employees;
         private ObservableCollection<Task> tasks;
-
-        private List<string> nameCollection;
-        /// <summary>
-        /// color collection
-        /// </summary>
-        private List<Brush> colorCollection;
         public SchedulerViewModel()
         {
             this.Tasks = new ObservableCollection<Task>();
-            this.CreateNameCollection();
-            this.CreateColorCollection();
-            this.InitializeResources();
             this.CreateTasks();
-        }
-
-        public ObservableCollection<Employee> Employees
-        {
-            get
-            {
-                return employees;
-            }
-
-            set
-            {
-                employees = value;
-                this.RaisePropertyChanged("Employees");
-            }
         }
 
         /// <summary>
@@ -56,36 +32,6 @@ namespace CustomResourceView
             {
                 tasks = value;
                 this.RaisePropertyChanged("Tasks");
-            }
-        }
-
-        private void InitializeResources()
-        {
-            Random random = new Random();
-            this.Employees = new ObservableCollection<Employee>();
-            for (int i = 1; i < 4; i++)
-            {
-                Employee employee = new Employee();
-                employee.Name = nameCollection[i];
-                employee.ForegroundBrush = new SolidColorBrush(Colors.White);
-                employee.BackgroundBrush = this.colorCollection[i - 1];
-                employee.ID = i.ToString();
-                employee.ImageSource = "/Assets/People_Circle" + i.ToString() + ".png";
-
-                if (employee.ID.Equals("1"))
-                {
-                    employee.Designation = "(Team leader)";
-                }
-                else if (employee.ID.Equals("2"))
-                {
-                    employee.Designation = "(Developer)";
-                }
-                else
-                {
-                    employee.Designation = "(Tester)";
-                }
-
-                this.Employees.Add(employee);
             }
         }
 
@@ -228,49 +174,5 @@ namespace CustomResourceView
 
         #endregion BookingAppointments
 
-        #region Creating name collection
-        private void CreateNameCollection()
-        {
-            this.nameCollection = new List<string>();
-            this.nameCollection.Add("Sophia");
-            this.nameCollection.Add("Kinsley Elena");
-            this.nameCollection.Add("Adeline Ruby");
-            this.nameCollection.Add("Kinsley Ruby");
-            this.nameCollection.Add("Emilia");
-            this.nameCollection.Add("Daniel");
-            this.nameCollection.Add("Adeline Elena");
-            this.nameCollection.Add("Emilia William");
-            this.nameCollection.Add("James William");
-            this.nameCollection.Add("Zoey Addison");
-            this.nameCollection.Add("Danial William");
-            this.nameCollection.Add("Stephen Addison");
-            this.nameCollection.Add("Stephen");
-            this.nameCollection.Add("Danial Addison");
-            this.nameCollection.Add("Brooklyn");
-        }
-        #endregion Creating name collection
-
-
-        #region creating color collection
-        /// <summary>
-        /// color collection
-        /// </summary>
-        ////creating color collection
-        private void CreateColorCollection()
-        {
-            this.colorCollection = new List<Brush>();
-            this.colorCollection.Add(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#9d65c9")));
-            this.colorCollection.Add(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f08a5d")));
-            this.colorCollection.Add(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#679b9b")));
-            this.colorCollection.Add(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF1BA1E2")));
-            this.colorCollection.Add(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF09609")));
-            this.colorCollection.Add(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00ABA9")));
-            this.colorCollection.Add(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD80073")));
-            this.colorCollection.Add(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFA2C139")));
-            this.colorCollection.Add(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFE671B8")));
-            this.colorCollection.Add(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF339933")));
-        }
-
-        #endregion creating color collection
     }
 }

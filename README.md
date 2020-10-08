@@ -37,23 +37,6 @@ public class Employee
 ```
 
 ``` c# 
-// Custom resource collection in the view model.
-public ObservableCollection<object> Employees { get; set; }
-```
-
-``` c# 
-// Adding employee details in custom resource property.
-for (int i = 0; i < 3; i++)
-{
-    Employee employee = new Employee();
-    employee.Name = nameCollection[i];
-    employee.BackgroundBrush = this.colorCollection[random.Next(8)];
-    employee.ID = i.ToString();
-    Employees.Add(employee);
-}
-```
-
-``` c# 
 SpecialTimeRegion timeRegion = new SpecialTimeRegion();
 timeRegion.Text = "Casual leave"
 timeRegion.StartTime = new DateTime(currentDate.Year, currentDate.Month, currentDate.AddDays(2).Day, 0, 0, 0);
@@ -66,7 +49,6 @@ scheduler.DaysViewSettings.SpecialTimeRegions = new ObservableCollection<Special
 ``` xml   
         <syncfusion:SfScheduler ViewType="WorkWeek"
                                 ResourceGroupType="Resource"
-                                ResourceCollection="{Binding Employees}"
                                 ItemsSource="{Binding Tasks}">
             <syncfusion:SfScheduler.ResourceMapping>
                 <syncfusion:ResourceMapping 
@@ -75,6 +57,13 @@ scheduler.DaysViewSettings.SpecialTimeRegions = new ObservableCollection<Special
                     Background="BackgroundBrush" 
                     Foreground="ForegroundBrush"/>
             </syncfusion:SfScheduler.ResourceMapping>
+            <syncfusion:SfScheduler.ResourceCollection>
+                <local:SchedulerResourceCollection>
+                    <local:Employee Name="Sophia" ID="1" ForegroundBrush="White" BackgroundBrush="#9d65c9" />
+                    <local:Employee Name="Kinsley Elena" ID="2" ForegroundBrush="White" BackgroundBrush="#f08a5d" />
+                    <local:Employee Name="Adeline Ruby" ID="3" ForegroundBrush="White" BackgroundBrush="#679b9b" />
+                </local:SchedulerResourceCollection>
+            </syncfusion:SfScheduler.ResourceCollection>
         </syncfusion:SfScheduler>
 ```
 
@@ -85,6 +74,33 @@ scheduler.DaysViewSettings.SpecialTimeRegions = new ObservableCollection<Special
 **Customization**
 
 Scheduler resource view allows you to create different colors or even different views for resource view by using data templates and data-template selector support with [ResourceHeaderTemplate](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Scheduler.SfScheduler.html#Syncfusion_UI_Xaml_Scheduler_SfScheduler_ResourceHeaderTemplate) and [ResourceHeaderTemplateSelector](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Scheduler.SfScheduler.html#Syncfusion_UI_Xaml_Scheduler_SfScheduler_ResourceHeaderTemplateSelector) APIs in scheduler class.
+
+``` xml   
+            <syncfusion:SfScheduler.ResourceHeaderTemplate>
+                <DataTemplate>
+                    <Grid Background="Transparent">
+                        <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                            <Border CornerRadius="36" Height="72" Width="72" BorderThickness="4" BorderBrush="{Binding BackgroundBrush}">
+                                <Border CornerRadius="36" Height="64" Width="64" BorderThickness="4" BorderBrush="Transparent">
+                                    <Image HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   Width="55"
+                                   Height="55"
+                                   Source="{Binding ImageSource}" />
+                                </Border>
+                            </Border>
+                            <TextBlock HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="15"
+                               Text="{Binding Name}"/>
+                            <TextBlock HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="15"
+                               Text="{Binding Designation}"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </syncfusion:SfScheduler.ResourceHeaderTemplate>
+```
 
 **Output**
 

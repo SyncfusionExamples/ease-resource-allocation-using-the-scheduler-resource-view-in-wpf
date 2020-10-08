@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,14 @@ namespace CustomResourceView
         /// Gets or sets the image source.
         /// </summary>
         public string ImageSource { get; set; }
+
+    }
+
+    /// <summary>
+    /// Represents a class that defines the scheduler resource collection.
+    /// </summary>
+    public class SchedulerResourceCollection : ObservableCollection<object>
+    {
 
     }
 }

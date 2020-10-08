@@ -14,7 +14,6 @@
         </Grid.DataContext>
         <syncfusion:SfScheduler ViewType="WorkWeek" 
                                 ResourceGroupType="Resource"
-                                ResourceCollection="{Binding Employees}"
                                 ItemsSource="{Binding Tasks}">
             <syncfusion:SfScheduler.ResourceMapping>
                 <syncfusion:ResourceMapping 
@@ -32,6 +31,13 @@
                     ResourceIdCollection ="Assignees"
                     IsAllDay="IsAllDay"/>
             </syncfusion:SfScheduler.AppointmentMapping>
+            <syncfusion:SfScheduler.ResourceCollection>
+                <local:SchedulerResourceCollection>
+                    <local:Employee Name="Sophia" ID="1" ForegroundBrush="White" BackgroundBrush="#9d65c9" />
+                    <local:Employee Name="Kinsley Elena" ID="2" ForegroundBrush="White" BackgroundBrush="#f08a5d" />
+                    <local:Employee Name="Adeline Ruby" ID="3" ForegroundBrush="White" BackgroundBrush="#679b9b" />
+                </local:SchedulerResourceCollection>
+            </syncfusion:SfScheduler.ResourceCollection>
             <interactivity:Interaction.Behaviors>
                 <local:SchedulerBehavior/>
             </interactivity:Interaction.Behaviors>
